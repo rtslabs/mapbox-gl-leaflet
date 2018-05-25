@@ -77,15 +77,15 @@
             this._offset = this._map.containerPointToLayerPoint([0, 0]);
 
             // work around https://github.com/mapbox/mapbox-gl-leaflet/issues/47
-            if (map.options.zoomAnimation) {
-                L.DomEvent.on(map._proxy, L.DomUtil.TRANSITION_END, this._transitionEnd, this);
-            }
+            // if (map.options.zoomAnimation) {
+            //     L.DomEvent.on(map._proxy, L.DomUtil.TRANSITION_END, this._transitionEnd, this);
+            // }
         },
 
         onRemove: function (map) {
-            if (this._map.options.zoomAnimation) {
-                L.DomEvent.off(this._map._proxy, L.DomUtil.TRANSITION_END, this._transitionEnd, this);
-            }
+            // if (this._map.options.zoomAnimation) {
+            //     L.DomEvent.off(this._map._proxy, L.DomUtil.TRANSITION_END, this._transitionEnd, this);
+            // }
 
             this.getPane().removeChild(this._glContainer);
             this._glMap.remove();
